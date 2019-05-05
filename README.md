@@ -1,6 +1,7 @@
 # simple trie
 
-Implementation of a simple trie data structure, capable of storing strings of lowercase characters.
+Implementation of a simple trie data structure, capable of storing strings of
+lowercase characters.
 
 ## Types:
 
@@ -17,3 +18,7 @@ Implementation of a simple trie data structure, capable of storing strings of lo
 - `trie_inorder_t *simple_trie_inorder(const trie_t *)`
 - `trie_inorder_t *simple_trie_autocomplete(const trie_t *, const char *)`
 - `void simple_trie_free_inorder(trie_inorder_t *)`
+
+## Notes
+
+Only tested using `gcc` on Linux.

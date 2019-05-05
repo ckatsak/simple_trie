@@ -294,6 +294,11 @@ void t07(void)
 	simple_trie_free(trie);
 }
 
+void t08(void)
+{
+	simple_trie_free(NULL);
+}
+
 int main(void)
 {
 	test_create_empty_trie();
@@ -304,4 +309,5 @@ int main(void)
 	t05();
 	t06();
 	t07();
+	t08();
 }

@@ -21,6 +21,8 @@
 extern void
 simple_trie_free(trie_t *trie)
 {
+	if (!trie)
+		return;
 	for (int i = 0; i < SIMPLE_TRIE_NUM_CHILDREN; ++i)
 		if (trie->children[i])
 			simple_trie_free(trie->children[i]);

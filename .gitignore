@@ -3,6 +3,8 @@
 *.o
 *.a
 
+test/t01
+
 *.old
 
 .ycm_extra_conf.py
