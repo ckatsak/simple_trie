@@ -185,17 +185,18 @@ simple_trie_inorder(const trie_t *trie)
 	}
 
 	for (int i = 0; i < SIMPLE_TRIE_NUM_CHILDREN; ++i)
-		if (trie->children[i]) {
-			if (inorder(trie->children[i], &strings, &strings_size,
-						&num_strings, &path_str, 1)) {
+		if (trie->children[i])
+			if (unlikely(inorder(trie->children[i], &strings,
+					&strings_size, &num_strings,
+					&path_str, 1))) {
 				free(ret);
 				ret = NULL;
-			} else {
-				ret->entries = strings;
-				ret->num_entries = num_strings;
+				goto cleanup;
 			}
-		}
+	ret->entries = strings;
+	ret->num_entries = num_strings;
 
+cleanup:
 	free(path_str);
 	return ret;
 }
