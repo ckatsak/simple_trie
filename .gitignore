@@ -1,0 +1,8 @@
+.*.swp
+
+*.o
+*.a
+
+*.old
+
+.ycm_extra_conf.py
