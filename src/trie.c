@@ -100,7 +100,7 @@ simple_trie_remove_string(trie_t *trie, const char *string)
 	path[len]->is_word = 0;
 
 	/* Loop through each parent in the path to handle its child */
-	for (int i = len-1; i > 0; --i) {
+	for (int i = len-1; i >= 0; --i) {
 		/* Find child's index */
 		int j = path[i+1]->c - 'a';
 		assert(path[i+1]->c == string[i]);
